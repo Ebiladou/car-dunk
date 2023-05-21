@@ -1,7 +1,7 @@
 function Car() {
   this.driving = false;
-  this.direction = { x: 0, y: 0 };
   let status = this.driving;
+  this.direction = 0;
   
   this.steer = function () {
     //let status = this.driving;
