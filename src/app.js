@@ -1,10 +1,12 @@
-function Car() {
-  this.driving = false;
-  let status = this.driving;
-  this.direction = 0;
+class Car {
+  constructor() {
+    this.driving = false;
+    this.status = this.driving;
+    this.direction = 0;
+  }
 
-  this.steer = function () {
-    if (status === true) {
+  steer(angle) {
+    if (this.status === true) {
       this.direction += angle;
       this.direction %= 360;
       //let radians = (angle * Math.PI) / 180;
@@ -14,21 +16,21 @@ function Car() {
       //this.position.y = newY;
     }
     return this.driving;
-  };
+  }
 
-  this.start = function () {
-    if (status === false) {
+  start() {
+    if (this.status === false) {
       this.driving = true;
     }
     return this.driving;
-  };
+  }
 
-  this.break = function () {
-    if (status === true) {
+  break() {
+    if (this.status === true) {
       this.driving = false;
     }
     return this.driving;
-  };
+  }
 }
 
 const corolla = new Car();
