@@ -2,7 +2,10 @@ function Car() {
   this.driving = false;
   let status = this.driving;
   this.direction = 0;
+<<<<<<< HEAD
   //this.direction = { x: 0, y: 0 };
+=======
+>>>>>>> 25a3d247172d926327550d70e1f9159cab621fa2
   
   this.steer = function () {
     if (status === true) {
