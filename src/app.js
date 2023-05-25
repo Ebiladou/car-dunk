@@ -9,11 +9,6 @@ class Car {
     if (this.status === true) {
       this.direction += angle;
       this.direction %= 360;
-      //let radians = (angle * Math.PI) / 180;
-      //let newX = this.position.x + Math.cos(radians);
-      //let newY = this.position.y + Math.sin(radians);
-      //this.position.x = newX;
-      //this.position.y = newY;
     }
     return this.driving;
   }
@@ -21,6 +16,7 @@ class Car {
   start() {
     if (this.status === false) {
       this.driving = true;
+      this.status = this.driving;
     }
     return this.driving;
   }
@@ -28,10 +24,18 @@ class Car {
   break() {
     if (this.status === true) {
       this.driving = false;
+      this.status = this.driving;
     }
     return this.driving;
   }
 }
+class FlyingCar extends Car {
+  constructor() {
+    super();
+    this.altitude = 0;
+  }
 
-const corolla = new Car();
-console.log(corolla.start());
+  fly(distance) {
+    this.altitude = Math.max(0, this.altitude + distance);
+  }
+}
