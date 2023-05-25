@@ -37,5 +37,9 @@ class FlyingCar extends Car {
 
   fly(distance) {
     this.altitude = Math.max(0, this.altitude + distance);
+    return this.altitude;
   }
 }
+
+const corolla = new FlyingCar()
+console.log(corolla.fly(-0));
